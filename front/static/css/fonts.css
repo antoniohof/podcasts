@@ -1,0 +1,59 @@
+
+@font-face {
+  font-family: 'Vision';
+  src: url('../fonts/woff2/vision-webfont.woff2') format('woff2'),
+       url('../fonts/woff/vision-webfont.woff') format('woff');
+       font-weight: normal;
+       font-style: normal;
+       -webkit-font-smoothing: antialiased;
+       -moz-osx-font-smoothing: grayscale;
+      }
+
+@font-face {
+  font-family: 'Vision';
+  src: url('../fonts/woff2/vision-regular_italic-webfont.woff2') format('woff2'),
+  url('../fonts/woff/vision-regular_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'Vision';
+  src: url('../fonts/woff2/vision-light-webfont.woff2') format('woff2'),
+       url('../fonts/woff/vision-light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vision';
+  src: url('../fonts/woff2/vision-lightitalic-webfont.woff2') format('woff2'),
+       url('../fonts/woff/vision-lightitalic-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'Vision';
+  src: url('../fonts/woff2/vision-bold-webfont.woff2') format('woff2'),
+       url('../fonts/woff/vision-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'Vision';
+  src: url('../fonts/woff2/vision-bolditalic-webfont.woff2') format('woff2'),
+        url('../fonts/woff/vision-bolditalic-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+

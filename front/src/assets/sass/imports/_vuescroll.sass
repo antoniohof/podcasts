@@ -1,0 +1,158 @@
+.__vuescroll
+  position: relative
+  overflow: hidden
+  .__panel
+    box-sizing: border-box
+    position: relative
+    &.__hidebar::-webkit-scrollbar
+      width: 0
+      height: 0
+    &.__native
+      height: 100%
+    &.__slide
+      transform-origin: left top 0px
+      user-select: none
+      min-width: 100%
+      min-height: 100%
+    &.__pure-native
+      width: 100%
+      height: 100%
+  .__view
+    position: relative
+    box-sizing: border-box
+    min-width: 100%
+    min-height: 100%
+  .__rail-is-vertical, .__rail-is-horizontal
+    position: absolute
+    z-index: 1
+  .__bar-is-vertical, .__bar-is-horizontal
+    cursor: pointer
+    position: relative
+    transition: opacity 0.5s
+    user-select: none
+    border-radius: inherit
+  .__bar-wrap-is-vertical, .__bar-wrap-is-horizontal
+    position: absolute
+  .__bar-wrap-is-vertical
+    width: 100%
+  .__bar-wrap-is-horizontal
+    height: 100%
+  .__bar-button
+    position: absolute
+    cursor: pointer
+    display: table
+    .__bar-button-inner
+      width: 0
+      height: 0
+      margin: auto
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+  .__bar-button-is-vertical-start .__bar-button-inner
+    transform: translateY(-25%)
+    border-top-color: transparent !important
+    border-left-color: transparent !important
+    border-right-color: transparent !important
+  .__bar-button-is-vertical-end .__bar-button-inner
+    transform: translateY(25%)
+    border-bottom-color: transparent !important
+    border-left-color: transparent !important
+    border-right-color: transparent !important
+  .__bar-button-is-horizontal-start .__bar-button-inner
+    transform: translateX(-25%)
+    border-top-color: transparent !important
+    border-left-color: transparent !important
+    border-bottom-color: transparent !important
+  .__bar-button-is-horizontal-end .__bar-button-inner
+    transform: translateX(25%)
+    border-top-color: transparent !important
+    border-right-color: transparent !important
+    border-bottom-color: transparent !important
+  .__rail-is-vertical .__bar-is-vertical
+    top: 0
+    width: 100%
+  .__rail-is-horizontal .__bar-is-horizontal
+    left: 0
+    height: 100%
+  .__refresh, .__load
+    position: absolute
+    width: 100%
+    color: black
+    height: 50px
+    text-align: center
+    font-size: 16px
+    line-height: 50px
+  .__refresh svg, .__load svg
+    margin-right: 10px
+    width: 25px
+    height: 25px
+    vertical-align: sub
+  .__refresh svg.active, .__load svg.active
+    transition: all 0.2s
+  .__refresh svg.active.deactive, .__load svg.active.deactive
+    transform: rotateZ(180deg)
+  .__refresh svg
+    path, rect
+      fill: #20a0ff
+  .__load svg
+    path, rect
+      fill: #20a0ff
+  .__refresh svg.start, .__load svg.start
+    stroke: #343640
+    stroke-width: 4
+    stroke-linecap: round
+    -webkit-animation: loading-rotate 2s linear infinite
+    animation: loading-rotate 2s linear infinite
+  .__refresh svg.start .bg-path, .__load svg.start .bg-path
+    stroke: #f2f2f2
+    fill: none
+  .__refresh svg.start .active-path, .__load svg.start .active-path
+    stroke: #20a0ff
+    fill: none
+    stroke-dasharray: 90, 150
+    stroke-dashoffset: 0
+    -webkit-animation: loading-wipe 1.5s ease-in-out infinite
+    animation: loading-wipe 1.5s ease-in-out infinite
+  .__none
+    visibility: hidden
+
+@-webkit-keyframes loading-rotate
+  to
+    -webkit-transform: rotate(1turn)
+    transform: rotate(1turn)
+
+
+@keyframes loading-rotate
+  to
+    -webkit-transform: rotate(1turn)
+    transform: rotate(1turn)
+
+
+@-webkit-keyframes loading-wipe
+  0%
+    stroke-dasharray: 1, 200
+    stroke-dashoffset: 0
+
+  50%
+    stroke-dasharray: 90, 150
+    stroke-dashoffset: -40px
+
+  to
+    stroke-dasharray: 90, 150
+    stroke-dashoffset: -120px
+
+
+@keyframes loading-wipe
+  0%
+    stroke-dasharray: 1, 200
+    stroke-dashoffset: 0
+
+  50%
+    stroke-dasharray: 90, 150
+    stroke-dashoffset: -40px
+
+  to
+    stroke-dasharray: 90, 150
+    stroke-dashoffset: -120px
