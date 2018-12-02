@@ -1,28 +1,23 @@
 <template>
   <transition name="fade">
     <header class="topbar" v-if="getMeta">
-      <div class="row topbar_wrap">
-        <div class="col">
-          <router-link class="topbar_logo" to="/" tag="a">
-          </router-link>
-          <!-- router-link(:to="{name: 'workspacePlan'}")-->
-          <!-- router-link(:to="{name: 'WorkSpaceConfirm'}")-->
-          <a class="back" v-if="getMeta.back" @click="goBack">
-            <img src="static/icons/backarrow-icon.svg">
-          </a>
-        </div>
-        <div class="col topbar_controls">
-          <a
-            class="btn_topbar"
-            background="none"
-            type="circle-regular"
-            :icon="{
-              type: 'file',
-              value: 'static/icons/people-icon.png',
-              size: 'small'
-            }"
-            :tooltip="{ content: $t('tooltips.userProfile') }"
-          ></a>
+      <div class="wrap">
+        <a class="back" v-if='getMeta.back' @click="goBack">
+          <img src="static/icons/backarrow-icon.svg">
+        </a>
+        <router-link class="logo" v-if='!getMeta.back' to="/" tag="a">
+        LOGO
+        </router-link>
+        <div class="controls">
+          <div
+            class="controls_btn"
+          >Create</div>
+          <div
+            class="controls_btn"
+          >Explore</div>
+          <div
+            class="controls_btn"
+          >Home</div>
         </div>
       </div>
     </header>
@@ -85,21 +80,40 @@ $BtnSizeResetNone: none !important
   padding-right: 30px
   padding-left: 30px
   background: $headerBar
-  &_wrap
-    > .col
-      display: inline-flex
-      align-items: center
+  height: 50px
+  .wrap
+    justify-content: space-between
+    display: flex
+    flex-direction: row
+    width: 100%
+    .logo
+      width: 50px
       height: 50px
-  &_logo
-    display: inline-block
-    width: 150px
-    height: 20px
-    img
-      max-width: 100%
-      height: auto
-  &_controls
-    padding-right: 0
-    justify-content: flex-end
+      color: white
+      img
+        max-width: 100%
+        height: auto
+    .back
+      color: white
+      width: 15px
+      padding: 2px
+
+    .controls
+      width: 50%
+      height: 50px
+      display: flex
+      align-content: right !important
+      justify-content: right !important
+      flex-direction: row-reverse !important
+      &_btn
+        width: 100px
+        height: 100%
+        margin-left: 5px
+        color: white
+        display: flex
+        justify-content: center !important
+        flex-direction: column !important
+        text-align: center
 
 .btn_topbar
   margin-right: 0
