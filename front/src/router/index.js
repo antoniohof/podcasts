@@ -23,6 +23,18 @@ const router = new Router({
       }
     },
     {
+      path: '/explore',
+      component: load('components/views/Explore'),
+      name: 'explore',
+      meta: {
+        auth: false,
+        keepAlive: false,
+        top: {
+          show: true
+        }
+      }
+    },
+    {
       path: '*',
       component: load('components/home/HomePage'),
       name: 404,
