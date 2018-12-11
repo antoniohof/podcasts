@@ -33,7 +33,7 @@ export default {
 
 .home
   position: relative
-  z-index: 10
+  z-index: 0
   overflow-y: auto
   @media (min-width: 992px)
     overflow-y: hidden

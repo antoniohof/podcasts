@@ -82,7 +82,9 @@ export default {
 .app
   height: 100%
 
-.view
-  width: 100%
-  height: 100%
+  .view
+    width: 100%
+    height: 100%
+    top: 50px // top bar height
+
 </style>
