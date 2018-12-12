@@ -8,7 +8,6 @@ Vue.use(Router)
 const load = component => () => import(`@/${component}`)
 
 const router = new Router({
-  mode: 'history',
   routes: [
     {
       path: '/',
