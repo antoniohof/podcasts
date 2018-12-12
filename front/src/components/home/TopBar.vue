@@ -12,7 +12,7 @@
           <div
             class="controls_btn"
           >Create</div>
-          <div @click="onClickExplore()"
+          <div @click="onClickExplore"
             class="controls_btn"
           >Explore</div>
           <div @click="$router.push('/')"
