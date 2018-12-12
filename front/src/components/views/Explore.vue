@@ -19,6 +19,7 @@ import {
 
 export default {
   mounted () {
+    console.log('mounted explore')
   },
   components: {
     Map
