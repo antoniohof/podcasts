@@ -67,6 +67,7 @@ export default {
     },
     onClickExplore (evt) {
       this.getCurrentPosition()
+      console.log('push explore')
       this.$router.push('/explore')
     },
     ...mapActions('map', [

@@ -2,7 +2,7 @@
 const actions = {
   setLastLocation: ({ commit }, location) => commit('storeLocation', location),
   getCurrentPosition: ({ commit, dispatch, state }, location) => {
-    navigator.geolocation.getCurrentPosition((position) => {
+    window.navigator.geolocation.getCurrentPosition((position) => {
       this.center = {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
