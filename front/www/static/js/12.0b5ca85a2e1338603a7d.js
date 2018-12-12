@@ -1,0 +1,1 @@
+webpackJsonp([12],{"6YZM":function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n("Mfhw");t.default=function(e){return Object(r.services)(e).delete().then(function(e){return e.data})}}});

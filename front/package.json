@@ -6,7 +6,7 @@
   "private": false,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.local.conf.js",
-    "build": "gulp make:js:static --gulpfile build/staticMaker/staticMaker.js && node build/build_prod.js",
+    "build": "node build/build_prod.js",
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
@@ -105,7 +105,7 @@
     "webpack-merge": "^4.1.0"
   },
   "engines": {
-    "node": "^9.8.0",
+    "node": ">=9.8.0",
     "npm": ">=5.6.0"
   },
   "browserslist": [

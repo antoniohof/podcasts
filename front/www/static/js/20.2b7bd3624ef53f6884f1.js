@@ -1,0 +1,1 @@
+webpackJsonp([20],{jrnG:function(n,c){}});

@@ -1,0 +1,1 @@
+webpackJsonp([7],{"3KG0":function(e,t,i){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.default=function(e,t){if("timestamp"===e)return new Date(1e3*t).toDateString().slice(4,15);if("dateMysql"===e){var i=t.split("-");return new Date(i[0],i[1]-1,i[2].slice(0,2)).toDateString().slice(4,15)}return t}}});
