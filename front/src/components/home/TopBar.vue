@@ -9,14 +9,19 @@
         LOGO
         </router-link>
         <div class="controls">
+          <!--
           <div
             class="controls_btn"
+            :class="{ 'controls_btn--selected': $route.path === '/create' }"
           >Create</div>
+          -->
           <div @click="onClickExplore"
             class="controls_btn"
+            :class="{ 'controls_btn--selected': $route.path === '/explore' }"
           >Explore</div>
           <div @click="$router.push('/')"
             class="controls_btn"
+            :class="{ 'controls_btn--selected': $route.path === '/' }"
           >Home</div>
         </div>
       </div>
@@ -66,12 +71,12 @@ export default {
       this.$router.push(-1)
     },
     onClickExplore (evt) {
-      this.getCurrentPosition()
+      this.fetchCurrentPosition()
       console.log('push explore')
       this.$router.push('/explore')
     },
     ...mapActions('map', [
-      'getCurrentPosition'
+      'fetchCurrentPosition'
     ])
   },
   watch: {
@@ -87,9 +92,9 @@ $BtnSizeResetNone: none !important
 .topbar
   position: fixed
   width: 100%
-  padding-right: 30px
-  padding-left: 30px
-  background: $headerBar
+  padding-right: 20px
+  padding-left: 20px
+  background: $topBar
   z-index: 10
   height: 50px
   .wrap
@@ -118,15 +123,21 @@ $BtnSizeResetNone: none !important
       justify-content: right
       flex-direction: row-reverse
       &_btn
+        opacity: 0.4
         cursor: pointer
         width: 100px
         height: 100%
         margin-left: 5px
-        color: white
+        font-weight: 100
+        font-size: 15px
+        color: black
         display: flex
         justify-content: center
         flex-direction: column
         text-align: center
+
+        &--selected
+          opacity: 1
 
 .btn_topbar
   margin-right: 0
