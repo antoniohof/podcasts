@@ -97,7 +97,6 @@ export default {
         max-width: 100%
     &_title
       margin-top: 20px
-      font-familiy: Vision
       font-size: 24px
     // Space to bottom header
     &--space

@@ -32,7 +32,6 @@ export default {
     padding: 5px 10px
     width: 100%
     height: 35px
-    font-family: Vision
     font-size: 16px
     color: #A2A2A6
     border: solid 1px #9B9B9B
