@@ -5,6 +5,7 @@ import alert from './alert'
 import auth from './auth'
 import globals from './globals'
 import map from './map'
+import story from './story'
 
 Vue.use(Vuex)
 
@@ -14,6 +15,7 @@ export default new Vuex.Store({
     modal,
     alert,
     globals,
-    map
+    map,
+    story
   }
 })
