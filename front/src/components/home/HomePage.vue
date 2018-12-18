@@ -1,9 +1,10 @@
 <template>
   <section class="home home--transparent">
     <header class="home_header">
-      <h1 class="title">Podcasts</h1>
+      <h1 class="title">Lorem ipsum dolor sit amet</h1>
     </header>
     <section class="home_content">
+      Lorem ipsum dolor sit amet
     </section>
   </section>
 </template>
@@ -39,7 +40,6 @@ export default {
     overflow-y: hidden
   &_header
     position: relative
-    padding-top: 18px
     padding-left: 18px
     padding-right: 18px
     .title
