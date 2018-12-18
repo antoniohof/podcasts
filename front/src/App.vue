@@ -81,6 +81,7 @@ export default {
 
 .app
   height: 100%
+  overflow-y: hidden
 
   .view
     width: 100%
