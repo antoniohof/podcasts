@@ -4,7 +4,7 @@
       <h1 class="title">Explore</h1>
     </header>
     <section class="explore_content">
-      <Map class='map'>
+      <Map :stories='getStories' class='map'>
       </Map>
     </section>
   </section>
@@ -19,16 +19,26 @@ import {
 
 export default {
   mounted () {
-    console.log('mounted explore')
+    this.fetchStories()
+  },
+  updated () {
   },
   components: {
     Map
   },
   computed: {
-    ...mapGetters([
-    ])
+    ...mapGetters('story',
+      [
+        'getStories'
+      ]
+    )
   },
   methods: {
+    ...mapActions('story',
+      [
+        'fetchStories'
+      ]
+    )
   }
 }
 </script>
@@ -39,12 +49,11 @@ export default {
 .explore
   position: relative
   z-index: 0
-  overflow-y: auto
   @media (min-width: 992px)
     overflow-y: hidden
   &_header
     position: relative
-    padding-top: 18px
+    padding-top: 0px
     padding-left: 18px
     padding-right: 18px
     .title
@@ -55,8 +64,8 @@ export default {
       margin: 50px auto 0
       width: 190px
   &_content
+    height: 80%
     display: flex
-    height: 100%
     .map
       width: 100%
 
@@ -66,6 +75,6 @@ export default {
       margin-right: 0
       margin-left: 0
       max-width: none
-      height: 100%
+      height: 80%
 
 </style>
