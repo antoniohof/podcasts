@@ -13,7 +13,7 @@
       :opened="infoWindow.infoWinOpen"
       @closeclick="closeInfo"
     >{{infoWindow.infoContent}}
-      <PodcastPill>
+      <PodcastPill :story='getStory(lastSelected)'>
       </PodcastPill>
     </GmapInfoWindow>
     <GmapMarker
@@ -29,6 +29,7 @@
 </template>
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import mapStyle from '@/utils/mapStyle'
 
 import {
   PodcastPill
@@ -50,7 +51,7 @@ export default {
       map.setZoom(this.getLastLocation.zoom)
       map.setOptions({
         gestureHandling: 'greedy',
-        styles: this.getStyle(),
+        styles: mapStyle(),
         mapTypeControl: false,
         streetViewControl: false
       })
@@ -116,126 +117,8 @@ export default {
       // save location inside store
       this.setLastLocation({ lat: newCenter.lat(), lng: newCenter.lng(), zoom: this.zoom })
     },
-    getStyle () {
-      return [
-        {
-          'featureType': 'all',
-          'elementType': 'geometry.fill',
-          'stylers': [
-            {
-              'color': '#ebebeb'
-            }
-          ]
-        },
-        {
-          'featureType': 'landscape.man_made',
-          'elementType': 'geometry.fill',
-          'stylers': [
-            {
-              'color': '#d6d2cc'
-            }
-          ]
-        },
-        {
-          'featureType': 'poi',
-          'elementType': 'geometry.fill',
-          'stylers': [
-            {
-              'color': '#8d867c'
-            }
-          ]
-        },
-        {
-          'featureType': 'road',
-          'elementType': 'labels',
-          'stylers': [
-            {
-              'visibility': 'off'
-            }
-          ]
-        },
-        {
-          'featureType': 'administrative',
-          'elementType': 'labels',
-          'stylers': [
-            {
-              'visibility': 'off'
-            }
-          ]
-        },
-        {
-          'featureType': 'poi',
-          'elementType': 'labels',
-          'stylers': [
-            {
-              'visibility': 'off'
-            }
-          ]
-        },
-        {
-          'featureType': 'road.highway',
-          'elementType': 'geometry.fill',
-          'stylers': [
-            {
-              'color': '#8b1b41'
-            }
-          ]
-        },
-        {
-          'featureType': 'road.highway',
-          'elementType': 'geometry.stroke',
-          'stylers': [
-            {
-              'color': '#8b1b41'
-            },
-            {
-              'lightness': '50'
-            }
-          ]
-        },
-        {
-          'featureType': 'road.arterial',
-          'elementType': 'geometry.fill',
-          'stylers': [
-            {
-              'color': '#fcd27f'
-            }
-          ]
-        },
-        {
-          'featureType': 'road.arterial',
-          'elementType': 'geometry.stroke',
-          'stylers': [
-            {
-              'color': '#fcd27f'
-            },
-            {
-              'lightness': '50'
-            }
-          ]
-        },
-        {
-          'featureType': 'water',
-          'elementType': 'geometry.fill',
-          'stylers': [
-            {
-              'color': '#12202f'
-            },
-            {
-              'gamma': '2.00'
-            }
-          ]
-        },
-        {
-          'featureType': 'water',
-          'elementType': 'labels.text.fill',
-          'stylers': [
-            {
-              'lightness': '100'
-            }
-          ]
-        }
-      ]
+    getStory (id) {
+      return this.stories.find((story) => story.id === id)
     },
     ...mapActions('map', [
       'setLastLocation'

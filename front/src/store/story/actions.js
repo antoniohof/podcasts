@@ -11,6 +11,16 @@ const actions = {
       }).catch((e) => {
         return e
       })
+  },
+  fetchStoryTracks: ({ commit }, id) => {
+    return axios.soundcloud
+      .fetch().then((response) => {
+        console.log(response)
+        commit('storeTracks', { id: id, tracks: response.collection })
+        return response.collection
+      }).catch((e) => {
+        return e
+      })
   }
 }
 

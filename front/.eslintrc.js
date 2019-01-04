@@ -24,22 +24,22 @@ module.exports = {
   ],
   // add your custom rules here
   'rules': {
-      'indent': ['error', 2],
-      'one-var': [
-          'error',
-          {
-              'var': 'never',
-              'let': 'never',
-              'const': 'never'
-          }
-      ],
-      'semi': [2, 'never'],
-      'arrow-parens': 0,
-      'generator-star-spacing': 'off',
-      'spaced-comment': 'off',
-      'no-unused-vars': 'off',
-      'no-debugger': (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'homolog')  ? 'error' : 'off',
-      'no-new': 0
+    'indent': ['error', 2],
+    'one-var': [
+      'error',
+      {
+        'var': 'never',
+        'let': 'never',
+        'const': 'never'
+      }
+    ],
+    'semi': [2, 'never'],
+    'arrow-parens': 0,
+    'generator-star-spacing': 'off',
+    'spaced-comment': 'off',
+    'no-unused-vars': 'off',
+    'no-debugger': (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'homolog') ? 'error' : 'off',
+    'no-new': 0
   }
   // rules: {
   //   // allow async-await
